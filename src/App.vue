@@ -24,7 +24,7 @@ export default {
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
   
 }

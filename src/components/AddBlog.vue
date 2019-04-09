@@ -1,15 +1,15 @@
 <template>
   <div id="add-blog">
-    <h2>add-blog</h2>
+    <h2>写博客</h2>
     <form v-if="!submited">
       <label>Title</label>
       <input type="text" v-model="blog.title" required>
       <label>Content</label>
       <textarea v-model="blog.content"></textarea>
 
-      <div id="checkbox">
+      <div id="checkbox" >
         <label>Vue.js</label>
-        <input type="checkbox" value="Vue.js" v-model="blog.categories">
+        <input type="checkbox" value="Vue.js" v-model="blog.categories" >
         <label>React.js</label>
         <input type="checkbox" value="React.js" v-model="blog.categories">
         <label>Node.js</label>
@@ -50,6 +50,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   name: "add-blog",
   data() {
@@ -67,13 +69,10 @@ export default {
   methods: {
       //http://jsonplaceholder.typicode.com/
       post: function() {
-          this.$http.post("http://jsonplaceholder.typicode.com/posts", {
-              title: this.blog.title,
-              body: this.blog.content,
-              userId: 1
-          })
-          .then(function(data) {
-              console.log(data);
+        //   this.$http.post("https://vue-blog-3f2dc.firebaseio.com/posts.json", this.blog)
+          axios.post("/posts.json", this.blog)
+          .then((data) => {
+            //   console.log(data);
               this.submited = true;
           });
       }
@@ -121,7 +120,7 @@ textarea {
 button {
     display: block;
     margin: 20px 0;
-    background: #0e922f;
+    background: #4fc08d;
     color: aliceblue;
     border: 0;
     padding: 12px;

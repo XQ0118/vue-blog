@@ -37,7 +37,7 @@ a {
 }
 
 nav {
-    background-color: #2c3e50;
+    background-color:  #4fc08d;
     padding: 30px 0;
     margin-bottom: 40px;  
 }

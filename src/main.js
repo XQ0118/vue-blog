@@ -3,6 +3,11 @@ import VueResource from 'vue-resource'
 import VueRouter from 'vue-router'
 import App from './App.vue'
 import Routers from './routes'
+import axios from 'axios'
+
+//全局配置axios
+axios.defaults.baseURL = 'https://vue-blog-3f2dc.firebaseio.com'
+
 
 Vue.config.productionTip = false
 
